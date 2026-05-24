@@ -48,10 +48,12 @@
                     </header>
 
                     <div class="content-body">
-                        <div class="image-container">
-                            <img id="lamina-image" src="" alt="Imagem da lâmina" style="display: none;">
-                            <div id="no-image-placeholder" class="placeholder">
-                                <p>Imagem não encontrada.</p>
+                        <div class="image-wrapper">
+                            <div class="image-container">
+                                <img id="lamina-image" src="" alt="Imagem da lâmina" style="display: none;">
+                                <div id="no-image-placeholder" class="placeholder">
+                                    <p>Imagem não encontrada.</p>
+                                </div>
                             </div>
                         </div>
 
@@ -68,8 +70,8 @@
                             </div>
                             
                             <div class="navigation-buttons">
-                                <button id="btn-prev" class="btn secondary-btn" disabled><i class="ph ph-arrow-left"></i> Anterior</button>
-                                <button id="btn-next" class="btn secondary-btn" disabled>Próxima <i class="ph ph-arrow-right"></i></button>
+                                <button id="btn-prev" class="btn" disabled><i class="ph ph-arrow-left"></i> Anterior</button>
+                                <button id="btn-next" class="btn" disabled>Próxima <i class="ph ph-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -107,12 +109,12 @@
                         </div>
                         
                         <div class="navigation-buttons">
-                            <button id="btn-prova-next" class="btn secondary-btn">Próxima Pergunta Aleatória</button>
+                            <button id="btn-prova-next" class="btn">Próxima Pergunta Aleatória</button>
                         </div>
 
                         <div style="margin-top: 15px;">
-                            <button id="btn-reveal-lamina" class="btn warning-btn" style="width: 100%;">Revelar Nome da Lâmina</button>
-                            <p id="prova-lamina-revealed" class="hidden" style="text-align:center; margin-top:10px; font-weight:bold; color:var(--accent-color);"></p>
+                            <button id="btn-reveal-lamina" class="btn accent-btn" style="width: 100%;">Revelar Nome da Lâmina</button>
+                            <p id="prova-lamina-revealed" class="hidden" style="text-align:center; margin-top:10px; font-weight:bold; color:var(--accent-cyan);"></p>
                         </div>
                     </div>
                 </div>

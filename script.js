@@ -91,6 +91,12 @@ function setupTabs() {
     });
 }
 
+function triggerFade(element) {
+    element.classList.remove('animate-fade');
+    void element.offsetWidth; // force reflow
+    element.classList.add('animate-fade');
+}
+
 // ==========================================
 // MODO ESTUDO GUIADO
 // ==========================================
@@ -144,6 +150,9 @@ function loadEstudoQuestao() {
     questionCounter.textContent = `Pergunta ${estudoQuestaoIndex + 1}/${lamina.perguntas.length}`;
     questionText.textContent = questao.pergunta;
     answerText.textContent = questao.resposta;
+    
+    triggerFade(questionText);
+    triggerFade(laminaImage);
     
     answerBox.classList.add('hidden');
     answerBox.style.display = 'none';
@@ -225,6 +234,9 @@ function loadProvaQuestao() {
 
     provaQuestionText.textContent = questao.pergunta;
     provaAnswerText.textContent = questao.resposta;
+    
+    triggerFade(provaQuestionText);
+    triggerFade(provaImage);
     
     provaAnswerBox.classList.add('hidden');
     provaAnswerBox.style.display = 'none';
