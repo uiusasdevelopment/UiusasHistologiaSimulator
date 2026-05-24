@@ -340,8 +340,8 @@ header {
     margin-bottom: 10px;
 }
 
-.answer-box.hidden {
-    display: none;
+.hidden {
+    display: none !important;
 }
 
 /* Buttons */

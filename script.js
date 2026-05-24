@@ -184,10 +184,10 @@ function shuffle(array) {
 
 function initProva() {
     if (banco.length === 0) return;
-    // Cria uma cópia e embaralha as lâminas e suas perguntas
+    // Cria uma cópia e embaralha APENAS as lâminas
     provaLaminasAleatorias = banco.map(lamina => ({
         ...lamina,
-        perguntas: shuffle([...lamina.perguntas])
+        perguntas: [...lamina.perguntas] // <-- Mantém a ordem original das perguntas
     }));
     provaLaminasAleatorias = shuffle(provaLaminasAleatorias);
     
