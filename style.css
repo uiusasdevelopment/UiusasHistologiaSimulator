@@ -1,35 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-dark: #0a0a0f;
-    --bg-panel: #111116;
-    --bg-panel-light: #16161c;
-    --accent-cyan: #00e5ff;
-    --accent-magenta: #ff0055;
-    --text-main: #f8fafc;
-    --text-muted: #64748b;
-    --border-color: rgba(0, 229, 255, 0.15);
-    --border-strong: rgba(0, 229, 255, 0.4);
-    --glow-cyan: 0 0 15px rgba(0, 229, 255, 0.4);
-    --glow-magenta: 0 0 15px rgba(255, 0, 85, 0.4);
-    --panel-radius: 4px; /* Mais quadrado pra dar um ar UI tech */
+    /* Gradientes suaves e orgânicos para o fundo */
+    --bg-color-1: #0f172a;
+    --bg-color-2: #1e1b4b;
+    --bg-color-3: #312e81;
+    
+    /* Cores de vidro */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg-hover: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-border-light: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    /* Textos */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    
+    /* Acentos e Botões */
+    --accent-blue: #3b82f6;
+    --accent-blue-hover: #2563eb;
+    --accent-pink: #ec4899;
+    --accent-pink-hover: #db2777;
+    --accent-green: #10b981;
+    --accent-green-hover: #059669;
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
 }
 
-/* Scrollbar Customization */
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+/* Scrollbar Clean */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { 
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px; 
 }
-::-webkit-scrollbar-track {
-    background: var(--bg-dark);
-}
-::-webkit-scrollbar-thumb {
-    background: var(--accent-cyan);
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-magenta);
-}
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
 
 * {
     margin: 0;
@@ -38,30 +46,71 @@
 }
 
 body {
-    font-family: 'Rajdhani', sans-serif;
-    background-color: var(--bg-dark);
-    /* Dotted grid */
-    background-image: 
-        radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-position: 0 0, 25px 25px;
-    background-size: 50px 50px;
-    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2vh 2vw;
-    overflow: hidden; /* Evitar rolagem na body se puder */
+    overflow: hidden;
+    /* Fundo em gradiente suave animado */
+    background: linear-gradient(135deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3));
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Formas borradas de fundo para destacar o vidro */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    opacity: 0.5;
+}
+body::before {
+    width: 400px; height: 400px;
+    background: var(--accent-blue);
+    top: -100px; left: -100px;
+}
+body::after {
+    width: 300px; height: 300px;
+    background: var(--accent-pink);
+    bottom: -50px; right: -50px;
 }
 
 .app-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1400px;
     height: 94vh;
-    gap: 15px;
+    gap: 20px;
+    z-index: 1;
+}
+
+/* Mixin / Classe utilitária Glassmorphism */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: var(--radius-lg);
+}
+
+.glass-panel-inner {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
 }
 
 /* Nav Abas */
@@ -69,21 +118,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background: var(--bg-panel);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-    border-radius: var(--panel-radius);
-    /* Cyber corner accent */
-    position: relative;
-}
-
-.app-nav::before {
-    content: '';
-    position: absolute;
-    bottom: -1px; left: 20px; right: 20px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    padding: 15px 30px;
+    border-radius: 100px; /* Estilo pill-shape */
 }
 
 .app-nav .logo {
@@ -94,98 +130,83 @@ body {
 
 .app-nav .logo i {
     font-size: 2rem;
-    color: var(--accent-cyan);
-    text-shadow: var(--glow-cyan);
+    color: var(--text-primary);
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    line-height: 1;
+    font-size: 1.4rem;
+    line-height: 1.1;
     font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: -0.5px;
 }
 
 .logo-text small {
     display: block;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--accent-magenta);
-    letter-spacing: 3px;
-    margin-top: 2px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-secondary);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 6px;
+    border-radius: 100px;
+    border: 1px solid var(--glass-border);
 }
 
 .nav-links li {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 16px;
+    padding: 10px 20px;
     cursor: pointer;
-    font-family: 'Share Tech Mono', monospace;
+    font-weight: 500;
     font-size: 0.95rem;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    border: 1px solid transparent;
-    transition: all 0.2s ease-in-out;
-    position: relative;
-    overflow: hidden;
+    color: var(--text-secondary);
+    border-radius: 100px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-links li:hover {
-    color: var(--text-main);
-    background: rgba(0, 229, 255, 0.05);
+    color: var(--text-primary);
+    background: var(--glass-bg-hover);
 }
 
 .nav-links li.active {
-    color: var(--accent-cyan);
-    border-color: var(--border-color);
-    background: rgba(0, 229, 255, 0.08);
+    color: #fff;
+    background: var(--accent-blue);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
-/* Sub-line glow on active tab */
-.nav-links li.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--accent-cyan);
-    box-shadow: var(--glow-cyan);
-}
-
-/* Animacao Click Buttons Tab */
 .nav-links li:active {
-    transform: scale(0.97);
+    transform: scale(0.95);
 }
-
 
 /* Tabs Content Area */
 .tab-content {
     display: none;
     flex: 1;
-    overflow: hidden; /* Mantem layouts filhos contidos */
+    overflow: hidden;
 }
 .tab-content.active {
     display: flex;
-    animation: fadeScale 0.3s ease-out forwards;
+    animation: fadeScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeScale {
-    0% { opacity: 0; transform: scale(0.99); }
-    100% { opacity: 1; transform: scale(1); }
+    0% { opacity: 0; transform: translateY(10px) scale(0.99); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* Layout Estudo e Prova */
 .study-layout, .prova-layout {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     height: 100%;
+    padding: 20px;
 }
 
 /* Sidebar Estudo */
@@ -193,144 +214,113 @@ body {
     width: 280px;
     display: flex;
     flex-direction: column;
-    background: var(--bg-panel);
-    border: 1px solid var(--border-color);
-    padding: 15px;
+    padding: 20px;
     overflow-y: auto;
 }
 
 .sidebar h2 {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
     margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .sidebar ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
 }
 
 .sidebar li {
-    padding: 10px 15px;
-    background: rgba(0,0,0,0.3);
+    padding: 12px 16px;
+    background: transparent;
+    border-radius: var(--radius-sm);
     cursor: pointer;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    border-left: 2px solid transparent;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
 }
 
 .sidebar li:hover {
-    background: rgba(0, 229, 255, 0.05);
-    border-left-color: var(--border-strong);
-    padding-left: 18px;
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border);
 }
 
 .sidebar li.active {
-    background: linear-gradient(90deg, rgba(0, 229, 255, 0.1), transparent);
-    border-left: 3px solid var(--accent-cyan);
-    color: var(--accent-cyan);
+    background: var(--accent-blue);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    border-color: transparent;
 }
 .sidebar li:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }
-
 
 /* Main Content / Viewport da Lâmina */
 .main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    background: var(--bg-panel);
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    position: relative;
-}
-
-/* Decorações cyberpunk no container main */
-.main-content::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 30px; height: 30px;
-    border-top: 2px solid var(--accent-cyan);
-    border-right: 2px solid var(--accent-cyan);
-    pointer-events: none;
-}
-.main-content::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 30px; height: 30px;
-    border-bottom: 2px solid var(--accent-magenta);
-    border-left: 2px solid var(--accent-magenta);
-    pointer-events: none;
+    gap: 20px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px dashed rgba(255,255,255,0.1);
-    padding-bottom: 10px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 header h1, .prova-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
 }
 
 .badge {
-    background: rgba(255, 0, 85, 0.1);
-    color: var(--accent-magenta);
-    padding: 5px 10px;
-    font-family: 'Share Tech Mono', monospace;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    padding: 6px 14px;
     font-size: 0.85rem;
-    border: 1px solid var(--accent-magenta);
+    font-weight: 600;
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
     margin-left: 10px;
-    vertical-align: middle;
+    backdrop-filter: blur(4px);
 }
 
-/* === O SEGREDO DO LAYOUT ESTÁ AQUI === */
+/* === Layout de Imagem e Pergunta === */
 .content-body {
     display: flex;
     gap: 20px;
     flex: 1;
-    overflow: hidden; /* Impede vazamento */
+    overflow: hidden;
 }
 
 .image-wrapper {
-    flex: 0 0 55%; /* Ocupa 55% da tela rigorosamente */
+    flex: 0 0 55%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
-    border: 1px solid var(--border-color);
-    box-shadow: inset 0 0 50px rgba(0, 229, 255, 0.05);
-    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
     position: relative;
-    padding: 20px;
-}
-
-/* Efeito grade escaneadora na imagem */
-.image-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 229, 255, 0.03) 2px, rgba(0, 229, 255, 0.03) 4px);
-    pointer-events: none;
-    border-radius: 12px;
+    padding: 30px;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
 }
 
 .image-container {
@@ -345,43 +335,32 @@ header h1, .prova-header h1 {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
-    animation: imageFloat 6s ease-in-out infinite;
-    /* Adicionando borda circular luminosa na propria imagem caso já seja redonda */
     border-radius: 50%; 
-    border: 2px solid rgba(0, 229, 255, 0.2);
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease;
 }
 
-@keyframes imageFloat {
-    0% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-5px) scale(1.02); }
-    100% { transform: translateY(0px) scale(1); }
+.image-container:hover img {
+    transform: scale(1.03);
 }
 
-
-/* --- Container de Perguntas --- */
+/* Container de Perguntas */
 .question-container {
-    flex: 1; /* Ocupa o restante (45%) */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    background: var(--bg-panel-light);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 25px;
-    border-radius: 8px;
+    padding: 30px;
     position: relative;
     overflow-y: auto;
 }
 
 #question-text, #prova-question-text {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-primary);
     margin-bottom: 25px;
-    border-left: 3px solid var(--accent-cyan);
-    padding-left: 15px;
-    line-height: 1.4;
-    text-shadow: 0 0 2px rgba(255,255,255,0.2);
+    line-height: 1.5;
 }
 
 .answer-section {
@@ -392,115 +371,102 @@ header h1, .prova-header h1 {
 }
 
 .answer-box {
-    background: rgba(0, 229, 255, 0.05);
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    font-size: 1.2rem;
-    color: var(--text-main);
-    border-left: 3px solid var(--accent-magenta);
-    border-radius: 4px;
-    animation: glitchIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@keyframes glitchIn {
-    0% { opacity: 0; transform: translateX(-10px); filter: blur(2px); }
-    100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border-light);
+    padding: 20px;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    line-height: 1.6;
 }
 
 .answer-box strong {
-    color: var(--accent-magenta);
-    font-family: 'Share Tech Mono', monospace;
+    color: var(--text-primary);
+    font-weight: 700;
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 8px;
-}
-
-.hidden {
-    display: none !important;
+    margin-bottom: 12px;
+    opacity: 0.8;
 }
 
 /* ==================================
    BOTÕES E INTERAÇÕES 
 =================================== */
 .btn {
-    font-family: 'Share Tech Mono', monospace;
-    border: 1px solid var(--border-strong);
-    background: rgba(0, 229, 255, 0.05);
-    color: var(--accent-cyan);
-    padding: 12px 20px;
+    font-family: inherit;
+    border: 1px solid var(--glass-border-light);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    padding: 14px 24px;
     font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.15s ease-out; /* Transições rápidas */
+    transition: all 0.2s ease-out;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    border-radius: 2px;
+    gap: 10px;
+    border-radius: var(--radius-sm);
+    backdrop-filter: blur(4px);
 }
 
 .btn:hover:not(:disabled) {
-    background: rgba(0, 229, 255, 0.15);
-    box-shadow: var(--glow-cyan);
-    text-shadow: 0 0 5px rgba(0, 229, 255, 0.8);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .btn:active:not(:disabled) {
-    transform: scale(0.96) translateY(0);
-    box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.3);
+    transform: scale(0.97);
 }
 
 .btn:disabled {
-    opacity: 0.2;
-    border-color: var(--text-muted);
-    color: var(--text-muted);
+    opacity: 0.3;
     cursor: not-allowed;
 }
 
 .primary-btn {
-    background: rgba(0, 229, 255, 0.1);
+    background: var(--accent-blue);
+    border-color: transparent;
+    color: #fff;
     width: 100%;
-    padding: 16px;
-    font-size: 1.1rem;
-    border-color: var(--accent-cyan);
+}
+.primary-btn:hover:not(:disabled) {
+    background: var(--accent-blue-hover);
+    border-color: transparent;
 }
 
 .accent-btn {
-    border-color: var(--accent-magenta);
-    color: var(--accent-magenta);
-    background: rgba(255, 0, 85, 0.05);
+    background: var(--accent-pink);
+    border-color: transparent;
+    color: #fff;
 }
 .accent-btn:hover:not(:disabled) {
-    background: rgba(255, 0, 85, 0.15);
-    box-shadow: var(--glow-magenta);
-    text-shadow: 0 0 5px rgba(255, 0, 85, 0.8);
-}
-.accent-btn:active:not(:disabled) {
-    box-shadow: inset 0 0 10px rgba(255, 0, 85, 0.3);
+    background: var(--accent-pink-hover);
+    border-color: transparent;
 }
 
 .success-btn {
-    background: rgba(0, 229, 255, 0.2);
+    background: var(--accent-green);
+    border-color: transparent;
     color: #fff;
-    border: 1px solid var(--accent-cyan);
-    box-shadow: var(--glow-cyan);
 }
 .success-btn:hover:not(:disabled) {
-    background: rgba(0, 229, 255, 0.3);
+    background: var(--accent-green-hover);
+    border-color: transparent;
 }
 
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: auto;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 20px;
+    border-top: 1px solid var(--glass-border);
 }
 
 
@@ -510,10 +476,10 @@ header h1, .prova-header h1 {
 .config-layout {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     overflow-y: auto;
     height: 100%;
-    padding: 5px;
+    padding: 10px;
 }
 
 .config-grid {
@@ -525,73 +491,78 @@ header h1, .prova-header h1 {
 .cropper-wrapper {
     width: 100%;
     height: 350px;
-    background: #000;
+    background: rgba(0,0,0,0.3);
     margin-top: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
     position: relative;
+    overflow: hidden;
 }
 
 .cropper-view-box, .cropper-face {
     border-radius: 50%;
 }
 .cropper-view-box {
-    outline: 2px solid var(--accent-cyan);
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+    outline: 2px solid var(--accent-blue);
 }
 
-.text-input, .config-select {
+.text-input, .config-select, .file-input {
     width: 100%;
-    background: rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--glass-border);
     color: #fff;
-    padding: 12px 15px;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.1rem;
-    border-radius: 4px;
+    padding: 14px 18px;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
     transition: all 0.2s;
 }
 
 .text-input:focus, .config-select:focus {
     outline: none;
-    border-color: var(--accent-cyan);
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+    border-color: var(--accent-blue);
+    background: rgba(0,0,0,0.3);
 }
 
 textarea.text-input {
-    min-height: 80px;
+    min-height: 100px;
     resize: vertical;
 }
 
 .q-group {
-    background: rgba(255,255,255,0.02);
-    padding: 15px;
-    border-left: 2px solid var(--accent-cyan);
-    margin-bottom: 10px;
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border-left: 3px solid var(--accent-blue);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-bottom: 15px;
+    gap: 8px;
+    margin-bottom: 20px;
 }
 .input-group label {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
-/* Efeito global Fade In para atualizações (Usado no JS) */
+/* Animações Auxiliares (JS usa) */
 .animate-fade {
-    animation: fadeContent 0.3s ease-in-out forwards;
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes fadeContent {
-    0% { opacity: 0; transform: translateY(5px); }
-    100% { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); filter: blur(2px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Remover classe hidden padrão e substituir por manipulação JS ou utilitária severa */
+.hidden {
+    display: none !important;
 }

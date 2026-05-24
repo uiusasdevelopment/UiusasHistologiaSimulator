@@ -242,7 +242,7 @@ function loadProvaQuestao() {
     provaAnswerBox.style.display = 'none';
     btnProvaShowAnswer.textContent = 'Ver Resposta';
     
-    provaLaminaRevealed.classList.add('hidden');
+    provaLaminaRevealed.style.display = 'none';
     provaLaminaRevealed.textContent = lamina.titulo;
     btnProvaShowAnswer.disabled = false;
 }
@@ -260,7 +260,7 @@ btnProvaShowAnswer.addEventListener('click', () => {
 });
 
 btnRevealLamina.addEventListener('click', () => {
-    provaLaminaRevealed.classList.remove('hidden');
+    provaLaminaRevealed.style.display = 'block';
 });
 
 btnProvaNext.addEventListener('click', () => {
