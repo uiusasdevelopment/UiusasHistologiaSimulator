@@ -202,8 +202,16 @@ body::after {
 }
 
 /* Layout Estudo e Prova */
-.study-layout, .prova-layout {
+.study-layout {
     display: flex;
+    gap: 20px;
+    height: 100%;
+    padding: 20px;
+}
+
+.prova-layout {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     height: 100%;
     padding: 20px;
@@ -311,7 +319,7 @@ header h1, .prova-header h1 {
 }
 
 .image-wrapper {
-    flex: 0 0 55%; 
+    flex: 0 0 50%; 
     display: flex;
     justify-content: center;
     align-items: center;
