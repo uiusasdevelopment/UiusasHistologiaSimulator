@@ -214,7 +214,120 @@ window.BANCO_DIGESTORIO = [
 ];
 
 window.BANCO_URINARIO = [
-    // As lâminas do urinário virão aqui
+    {
+        "id": "urinario1",
+        "titulo": "Lâmina 17 - Rim",
+        "imagem": "imagem_u1.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual estrutura a região 1 aponta e qual sua principal característica?",
+                "resposta": "Córtex Renal. É rico em corpúsculos renais."
+            },
+            {
+                "pergunta": "Qual estrutura a região 2 aponta e o que é encontrado nela?",
+                "resposta": "Medula Renal. Contém segmentos delgados e espessos da alça de Henle, túbulos e ductos coletores e papila renal. Não possui corpúsculos."
+            },
+            {
+                "pergunta": "Qual estrutura a região 3 aponta e qual é o seu tecido?",
+                "resposta": "Cápsula. Formada por tecido conjuntivo denso não modelado."
+            }
+        ]
+    },
+    {
+        "id": "urinario2",
+        "titulo": "Lâmina 24 - Bexiga (Visão 1)",
+        "imagem": "imagem_u2.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual estrutura a região 1 aponta e qual é o seu epitélio?",
+                "resposta": "Mucosa. Possui epitélio de revestimento de transição com células globosas e células basais de sustentação."
+            },
+            {
+                "pergunta": "Qual tecido compõe a lâmina própria (região 2)?",
+                "resposta": "Tecido conjuntivo frouxo."
+            },
+            {
+                "pergunta": "Quais são as camadas musculares apontadas na região 3?",
+                "resposta": "Músculo liso em três orientações: longitudinal interna, circular e longitudinal externa."
+            }
+        ]
+    },
+    {
+        "id": "urinario3",
+        "titulo": "Lâmina 24 - Bexiga (Visão 2)",
+        "imagem": "imagem_u3.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual estrutura a região 1 aponta?",
+                "resposta": "Mucosa."
+            },
+            {
+                "pergunta": "Qual estrutura a região 2 aponta?",
+                "resposta": "Lâmina própria."
+            },
+            {
+                "pergunta": "Qual estrutura a região 3 aponta?",
+                "resposta": "Camadas musculares (músculo liso)."
+            },
+            {
+                "pergunta": "Qual estrutura a região 4 aponta e de que é formada?",
+                "resposta": "Serosa ou adventícia, formada por tecido conjuntivo frouxo."
+            }
+        ]
+    },
+    {
+        "id": "urinario4",
+        "titulo": "Lâmina 31 - Rim, Ureter",
+        "imagem": "imagem_u4.png",
+        "perguntas": [
+            {
+                "pergunta": "O que a seta amarela aponta e qual o seu tecido?",
+                "resposta": "Cápsula renal, formada por tecido conjuntivo denso não modelado."
+            },
+            {
+                "pergunta": "O que a seta azul aponta?",
+                "resposta": "Túbulos contorcidos distais e proximais."
+            },
+            {
+                "pergunta": "O que a seta verde aponta?",
+                "resposta": "Corpúsculos renais."
+            }
+        ]
+    },
+    {
+        "id": "urinario5",
+        "titulo": "Lâmina 65 - Rim Humano (Glomérulo)",
+        "imagem": "imagem_u5.png",
+        "perguntas": [
+            {
+                "pergunta": "O que a seta azul aponta?",
+                "resposta": "Glomérulo renal."
+            }
+        ]
+    },
+    {
+        "id": "urinario6",
+        "titulo": "Lâmina 65 - Rim Humano (Detalhes do Corpúsculo)",
+        "imagem": "imagem_u6.png",
+        "perguntas": [
+            {
+                "pergunta": "O que a seta azul aponta e qual é o seu epitélio?",
+                "resposta": "Folheto/epitélio de revestimento externo da cápsula de Bowman. É um epitélio pavimentoso simples."
+            },
+            {
+                "pergunta": "O que a seta verde aponta e qual a sua característica?",
+                "resposta": "Polo vascular, caracterizado pela presença da mácula densa (modificação das células do túbulo contorcido distal de cúbico para colunar)."
+            },
+            {
+                "pergunta": "O que a seta amarela aponta?",
+                "resposta": "Polo urinário, onde a luz do túbulo proximal é contínua com o espaço da cápsula."
+            },
+            {
+                "pergunta": "O que a seta vermelha aponta?",
+                "resposta": "Espaço da cápsula."
+            }
+        ]
+    }
 ];
 
 // O banco inicial padrão
