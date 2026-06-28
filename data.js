@@ -239,16 +239,20 @@ window.BANCO_URINARIO = [
         "imagem": "imagem_u2.png",
         "perguntas": [
             {
-                "pergunta": "Qual estrutura a região 1 aponta e qual é o seu epitélio?",
-                "resposta": "Mucosa. Possui epitélio de revestimento de transição com células globosas e células basais de sustentação."
+                "pergunta": "Qual é o órgão?",
+                "resposta": "Bexiga Urinária."
             },
             {
-                "pergunta": "Qual tecido compõe a lâmina própria (região 2)?",
-                "resposta": "Tecido conjuntivo frouxo."
+                "pergunta": "Qual é o epitélio de revestimento?",
+                "resposta": "Epitélio de transição (polimórfico), localizado na camada mucosa."
             },
             {
-                "pergunta": "Quais são as camadas musculares apontadas na região 3?",
-                "resposta": "Músculo liso em três orientações: longitudinal interna, circular e longitudinal externa."
+                "pergunta": "Quais são as camadas que compõem a parede do órgão?",
+                "resposta": "Mucosa, Lâmina Própria (tecido conjuntivo), Camada Muscular (detrusor) e Adventícia/Serosa externa."
+            },
+            {
+                "pergunta": "O que caracteriza a camada mais externa (adventícia/serosa)?",
+                "resposta": "A presença de tecido conjuntivo associado, em algumas áreas, a um mesotélio externo (serosa)."
             }
         ]
     },
@@ -258,20 +262,16 @@ window.BANCO_URINARIO = [
         "imagem": "imagem_u3.png",
         "perguntas": [
             {
-                "pergunta": "Qual estrutura a região 1 aponta?",
-                "resposta": "Mucosa."
+                "pergunta": "Qual é o órgão?",
+                "resposta": "Bexiga Urinária."
             },
             {
-                "pergunta": "Qual estrutura a região 2 aponta?",
-                "resposta": "Lâmina própria."
+                "pergunta": "Qual é o epitélio de revestimento?",
+                "resposta": "Epitélio de transição (polimórfico), localizado na camada mucosa."
             },
             {
-                "pergunta": "Qual estrutura a região 3 aponta?",
-                "resposta": "Camadas musculares (músculo liso)."
-            },
-            {
-                "pergunta": "Qual estrutura a região 4 aponta e de que é formada?",
-                "resposta": "Serosa ou adventícia, formada por tecido conjuntivo frouxo."
+                "pergunta": "Quais são as camadas que compõem a parede do órgão?",
+                "resposta": "Mucosa, Lâmina Própria (tecido conjuntivo), Camada Muscular (detrusor) e Adventícia/Serosa externa."
             }
         ]
     },
@@ -281,16 +281,32 @@ window.BANCO_URINARIO = [
         "imagem": "imagem_u4.png",
         "perguntas": [
             {
-                "pergunta": "O que a seta amarela aponta e qual o seu tecido?",
-                "resposta": "Cápsula renal, formada por tecido conjuntivo denso não modelado."
+                "pergunta": "Na região cortical, quais estruturas formam o Corpúsculo Renal?",
+                "resposta": "Glomérulo renal e Cápsula de Bowman (com sua camada parietal, espaço de Bowman e camada visceral com podócitos)."
             },
             {
-                "pergunta": "O que a seta azul aponta?",
-                "resposta": "Túbulos contorcidos distais e proximais."
+                "pergunta": "Quais tipos celulares compõem o glomérulo?",
+                "resposta": "Células endoteliais dos capilares fenestrados, células mesangiais e podócitos."
             },
             {
-                "pergunta": "O que a seta verde aponta?",
-                "resposta": "Corpúsculos renais."
+                "pergunta": "O que é a Mácula Densa e de qual estrutura ela faz parte?",
+                "resposta": "É uma diferenciação celular que faz parte do Aparelho Justaglomerular, localizada na parede do túbulo contorcido distal."
+            },
+            {
+                "pergunta": "Como diferenciar histologicamente o Túbulo Contorcido Proximal do Distal?",
+                "resposta": "O túbulo contorcido proximal apresenta citoplasma mais intensamente corado (acidófilo) e lúmen menor/irregular devido à borda em escova."
+            },
+            {
+                "pergunta": "Como diferenciar a região cortical da região medular do rim?",
+                "resposta": "A região cortical possui corpúsculos renais. A região medular não possui corpúsculos, apresentando apenas alças de Henle e túbulos coletores."
+            },
+            {
+                "pergunta": "Qual o epitélio de revestimento da camada mucosa do Ureter?",
+                "resposta": "Epitélio de transição (urotélio)."
+            },
+            {
+                "pergunta": "Quais são as camadas musculares do Ureter?",
+                "resposta": "Camada muscular circular interna e longitudinal externa."
             }
         ]
     },
@@ -300,8 +316,16 @@ window.BANCO_URINARIO = [
         "imagem": "imagem_u5.png",
         "perguntas": [
             {
-                "pergunta": "O que a seta azul aponta?",
-                "resposta": "Glomérulo renal."
+                "pergunta": "O que pode indicar um espaço de Bowman anormalmente aumentado nesta lâmina?",
+                "resposta": "Pode ser um indicativo de congestão no espaço de Bowman."
+            },
+            {
+                "pergunta": "Quais achados histológicos nesta imagem sugerem que os néfrons estão em morte celular?",
+                "resposta": "A presença de glomérulos atrofiados e núcleos picnóticos."
+            },
+            {
+                "pergunta": "O que indicam os depósitos acastanhados observados no tecido?",
+                "resposta": "Depósitos de hemossiderina (acúmulo de material de degradação / 'lixo' celular)."
             }
         ]
     },
