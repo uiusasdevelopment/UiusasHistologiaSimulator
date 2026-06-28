@@ -1,4 +1,4 @@
-window.BANCO_DE_QUESTOES = [
+window.BANCO_DIGESTORIO = [
     {
         "id": "lamina1",
         "titulo": "Lâmina 1 - Língua",
@@ -212,3 +212,10 @@ window.BANCO_DE_QUESTOES = [
         ]
     }
 ];
+
+window.BANCO_URINARIO = [
+    // As lâminas do urinário virão aqui
+];
+
+// O banco inicial padrão
+window.BANCO_DE_QUESTOES = window.BANCO_DIGESTORIO;

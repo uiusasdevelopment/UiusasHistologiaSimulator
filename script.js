@@ -1,7 +1,8 @@
 // ==========================================
 // ESTADO DO APP E DADOS
 // ==========================================
-let banco = [...window.BANCO_DE_QUESTOES];
+let currentSystem = 'digestorio';
+let banco = [...window.BANCO_DIGESTORIO];
 let novasImagensGeradas = []; // { nome, base64 } para exportar depois
 
 // Controle Estudo
@@ -59,6 +60,7 @@ const newQuestionsContainer = document.getElementById('new-questions-container')
 const btnAddQ = document.getElementById('btn-add-q');
 const btnSaveToBanco = document.getElementById('btn-save-to-banco');
 const btnExportZip = document.getElementById('btn-export-zip');
+const sistemaSelect = document.getElementById('sistema-select');
 
 let cropper;
 let currentCroppedBase64 = null;
@@ -69,8 +71,33 @@ let currentGeneratedFilename = '';
 // ==========================================
 function initApp() {
     setupTabs();
+    setupSistemaSelector();
     initEstudo();
     populateConfigSelect();
+}
+
+function setupSistemaSelector() {
+    if(!sistemaSelect) return;
+    sistemaSelect.addEventListener('change', () => {
+        currentSystem = sistemaSelect.value;
+        if (currentSystem === 'digestorio') {
+            banco = [...window.BANCO_DIGESTORIO];
+        } else if (currentSystem === 'urinario') {
+            banco = [...window.BANCO_URINARIO];
+        }
+        
+        // Resetar UI based on active tab
+        initEstudo();
+        
+        const activeTab = document.querySelector('.nav-links li.active');
+        if (activeTab && activeTab.dataset.tab === 'tab-prova') {
+            initProva();
+        }
+        if (activeTab && activeTab.dataset.tab === 'tab-config') {
+            populateConfigSelect();
+            resetConfigForm();
+        }
+    });
 }
 
 function setupTabs() {
@@ -439,8 +466,9 @@ btnSaveToBanco.addEventListener('click', async () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 imagemFilename: filename,
-                imagemBase64: currentCroppedBase64, // pode ser null se ele nao trocar a imagem da existente
-                bancoCompleto: bancoLimpo
+                imagemBase64: currentCroppedBase64,
+                bancoDigestorio: currentSystem === 'digestorio' ? bancoLimpo : window.BANCO_DIGESTORIO,
+                bancoUrinario: currentSystem === 'urinario' ? bancoLimpo : window.BANCO_URINARIO
             })
         });
 
