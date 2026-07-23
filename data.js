@@ -455,8 +455,8 @@ window.BANCO_RESPIRATORIO = [
         "imagem": "imagem_r7.png",
         "perguntas": [
             {
-                "pergunta": "Quais estruturas associadas são exclusivas dos brônquios e confirmam seu diagnóstico?",
-                "resposta": "Presença de nódulos linfáticos (BALT) e placas de cartilagem hialina."
+                "pergunta": "O que está sendo observado na imagem e quais estruturas são apontadas?",
+                "resposta": "Brônquio. As setas mostram BALT (Tecido Linfocitário Associado aos Brônquios) e cartilagem hialina."
             },
             {
                 "pergunta": "Como é a camada muscular no brônquio em comparação ao bronquíolo?",
@@ -508,12 +508,8 @@ window.BANCO_RESPIRATORIO = [
         "imagem": "imagem_r10.png",
         "perguntas": [
             {
-                "pergunta": "Qual o epitélio de revestimento do alvéolo?",
-                "resposta": "Epitélio simples pavimentoso."
-            },
-            {
-                "pergunta": "PERGUNTA DE PROVA: Quais são os principais tipos celulares encontrados no alvéolo?",
-                "resposta": "Pneumócitos tipo I, pneumócitos tipo II, células de poeira (macrófagos alveolares) e células endoteliais (dos capilares)."
+                "pergunta": "O que estamos observando na seta? Qual a classificação histológica e os tipos celulares dessa porção?",
+                "resposta": "Septo alveolar, formado entre as paredes dos sacos alveolares. Seria epitélio simples pavimentoso, para facilitar as trocas gasosas. Os tipos celulares presentes são os pneumócitos I e II, células endoteliais, células de poeira (macrófagos) fibroblastos, fibras de colágeno e elastina."
             },
             {
                 "pergunta": "Qual a estrutura que funciona como passagem para o saco alveolar?",
@@ -527,12 +523,12 @@ window.BANCO_RESPIRATORIO = [
         "imagem": "imagem_r11.png",
         "perguntas": [
             {
-                "pergunta": "Qual é a camada mais interna e qual é o seu epitélio (epitélio respiratório)?",
-                "resposta": "Camada mucosa. É revestida por epitélio pseudoestratificado colunar ciliado com células caliciformes."
+                "pergunta": "O que estamos observando? Cite as características peculiares deste local.",
+                "resposta": "TRAQUEIA. Peculiaridades: Anéis de cartilagem hialina em formato de C, sendo de 16 a 20 cartilagens aproximadamente. Possui, em ordem externa para interna, camada serosa, cartilagem hialina (na submucosa) e camada mucosa."
             },
             {
-                "pergunta": "Quais são os 5 tipos celulares presentes no epitélio respiratório da traqueia?",
-                "resposta": "Células basais, células em escova, células caliciformes, células colunares ciliadas e células granulares (Sistema Neuroendócrino Difuso)."
+                "pergunta": "(Mesma lâmina em maior aumento) Qual o epitélio de revestimento e os tipos celulares desta porção?",
+                "resposta": "Epitélio respiratório, isto é, epitélio pseudoestratificado colunar ciliado com células caliciformes. Os tipos celulares são: células colunares ciliadas, células caliciformes, células basais, células com borda em escova e células granulares (sistema neuroendócrino difuso)."
             }
         ]
     },
