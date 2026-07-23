@@ -354,5 +354,9 @@ window.BANCO_URINARIO = [
     }
 ];
 
+window.BANCO_RESPIRATORIO = [
+    // As lâminas do respiratório virão aqui
+];
+
 // O banco inicial padrão
 window.BANCO_DE_QUESTOES = window.BANCO_DIGESTORIO;

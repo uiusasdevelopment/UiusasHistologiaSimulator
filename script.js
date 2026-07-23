@@ -84,6 +84,8 @@ function setupSistemaSelector() {
             banco = [...window.BANCO_DIGESTORIO];
         } else if (currentSystem === 'urinario') {
             banco = [...window.BANCO_URINARIO];
+        } else if (currentSystem === 'respiratorio') {
+            banco = [...window.BANCO_RESPIRATORIO];
         }
         
         // Resetar UI based on active tab
@@ -468,7 +470,8 @@ btnSaveToBanco.addEventListener('click', async () => {
                 imagemFilename: filename,
                 imagemBase64: currentCroppedBase64,
                 bancoDigestorio: currentSystem === 'digestorio' ? bancoLimpo : window.BANCO_DIGESTORIO,
-                bancoUrinario: currentSystem === 'urinario' ? bancoLimpo : window.BANCO_URINARIO
+                bancoUrinario: currentSystem === 'urinario' ? bancoLimpo : window.BANCO_URINARIO,
+                bancoRespiratorio: currentSystem === 'respiratorio' ? bancoLimpo : window.BANCO_RESPIRATORIO
             })
         });
 
