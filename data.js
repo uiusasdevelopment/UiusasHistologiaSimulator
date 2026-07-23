@@ -355,7 +355,153 @@ window.BANCO_URINARIO = [
 ];
 
 window.BANCO_RESPIRATORIO = [
-    // As lâminas do respiratório virão aqui
+    {
+        "id": "respiratorio1",
+        "titulo": "Lâmina 29 - Bronquíolo Terminal (Visão 1)",
+        "imagem": "imagem_r1.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual é a estrutura visualizada e seu órgão?",
+                "resposta": "Bronquíolo terminal, no Pulmão."
+            },
+            {
+                "pergunta": "Qual é o epitélio de revestimento do bronquíolo terminal?",
+                "resposta": "Epitélio simples colunar com transição para simples cúbico."
+            },
+            {
+                "pergunta": "Como diferenciar um bronquíolo de um brônquio?",
+                "resposta": "O bronquíolo NÃO possui nódulos linfáticos (BALT) nem placas de cartilagem hialina."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio2",
+        "titulo": "Lâmina 29 - Bronquíolo Terminal (Visão 2)",
+        "imagem": "imagem_r2.png",
+        "perguntas": [
+            {
+                "pergunta": "Quais células são características do epitélio do bronquíolo terminal?",
+                "resposta": "Células de Clara (maiores e mais transparentes), células ciliadas e células absortivas (em escova)."
+            },
+            {
+                "pergunta": "Qual a característica da camada muscular nesta estrutura?",
+                "resposta": "Possui uma camada muscular lisa contínua, concêntrica e mais externa."
+            },
+            {
+                "pergunta": "Qual é a importância clínica da camada muscular do bronquíolo terminal?",
+                "resposta": "É o principal local de afecção da asma, onde ocorre a constrição da musculatura lisa."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio3",
+        "titulo": "Lâmina 29 - Bronquíolo Terminal (Visão 3)",
+        "imagem": "imagem_r3.png",
+        "perguntas": [
+            {
+                "pergunta": "O bronquíolo terminal dá acesso direto aos sacos alveolares?",
+                "resposta": "Não, há ausência de acesso a sacos alveolares. O epitélio vai transicionando para cúbico simples quanto mais perto dos alvéolos."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio4",
+        "titulo": "Lâmina 29 - Bronquíolo Respiratório (Visão 1)",
+        "imagem": "imagem_r4.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual a principal característica estrutural que diferencia o bronquíolo respiratório do terminal?",
+                "resposta": "A presença de aberturas (saídas/evaginações) diretas para os sacos alveolares."
+            },
+            {
+                "pergunta": "Qual o epitélio de revestimento do bronquíolo respiratório?",
+                "resposta": "Epitélio cúbico simples transicionando para epitélio pavimentoso simples nos alvéolos."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio5",
+        "titulo": "Lâmina 29 - Bronquíolo Respiratório (Saco Alveolar)",
+        "imagem": "imagem_r5.png",
+        "perguntas": [
+            {
+                "pergunta": "O que são as pequenas projeções que formam o saco alveolar?",
+                "resposta": "Cada projeção no saco alveolar é um alvéolo individual, separados por septos interalveolares."
+            },
+            {
+                "pergunta": "Qual a principal função dessa região?",
+                "resposta": "É o local de realização das trocas gasosas (hematose) entre o ar e o sangue."
+            },
+            {
+                "pergunta": "Qual o epitélio de revestimento dos alvéolos?",
+                "resposta": "Epitélio simples pavimentoso."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio6",
+        "titulo": "Lâmina 29 - Bronquíolo Respiratório (Células)",
+        "imagem": "imagem_r6.png",
+        "perguntas": [
+            {
+                "pergunta": "Quais são os principais tipos celulares encontrados nos alvéolos?",
+                "resposta": "Pneumócitos tipo I (células achatadas), Pneumócitos tipo II, células de poeira (macrófagos alveolares) e células endoteliais (nos capilares)."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio7",
+        "titulo": "Lâmina 29 - Brônquio (Visão 1)",
+        "imagem": "imagem_r7.png",
+        "perguntas": [
+            {
+                "pergunta": "Quais estruturas associadas são exclusivas dos brônquios e confirmam seu diagnóstico?",
+                "resposta": "Presença de nódulos linfáticos (BALT) e placas de cartilagem hialina."
+            },
+            {
+                "pergunta": "Como é a camada muscular no brônquio em comparação ao bronquíolo?",
+                "resposta": "No brônquio a camada muscular é descontínua, enquanto no bronquíolo ela é contínua."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio8",
+        "titulo": "Lâmina 29 - Brônquio (Visão 2)",
+        "imagem": "imagem_r8.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual é o epitélio de revestimento do brônquio?",
+                "resposta": "Epitélio simples colunar (que vai sofrendo simplificação lenta e gradual para se tornar mais baixo)."
+            },
+            {
+                "pergunta": "Se as placas de cartilagem estiverem muito pequenas nesta lâmina, o que isso indica?",
+                "resposta": "Indica que é a porção final do brônquio, logo antes de se transformar em um bronquíolo."
+            },
+            {
+                "pergunta": "Qual a origem embriológica do BALT e da cartilagem hialina?",
+                "resposta": "Mesoderma esplâncnico."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio9",
+        "titulo": "Lâmina 29 - Brônquio (Células do Epitélio)",
+        "imagem": "imagem_r9.png",
+        "perguntas": [
+            {
+                "pergunta": "Quais são as 5 células presentes no epitélio brônquico?",
+                "resposta": "Células caliciformes, células ciliadas, células basais, células em escova e células neuroendócrinas."
+            },
+            {
+                "pergunta": "Qual a função da célula caliciforme e da célula ciliada, respectivamente?",
+                "resposta": "A caliciforme produz muco e a ciliada transporta o muco."
+            },
+            {
+                "pergunta": "Qual a função das células basais e das células em escova?",
+                "resposta": "Células basais agem como células-tronco. Células em escova possuem microvilosidades com função de absorção."
+            }
+        ]
+    }
 ];
 
 // O banco inicial padrão
