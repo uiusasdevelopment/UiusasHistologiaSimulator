@@ -501,6 +501,85 @@ window.BANCO_RESPIRATORIO = [
                 "resposta": "Células basais agem como células-tronco. Células em escova possuem microvilosidades com função de absorção."
             }
         ]
+    },
+    {
+        "id": "respiratorio10",
+        "titulo": "Lâmina 29 - Alvéolo",
+        "imagem": "imagem_r10.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual o epitélio de revestimento do alvéolo?",
+                "resposta": "Epitélio simples pavimentoso."
+            },
+            {
+                "pergunta": "PERGUNTA DE PROVA: Quais são os principais tipos celulares encontrados no alvéolo?",
+                "resposta": "Pneumócitos tipo I, pneumócitos tipo II, células de poeira (macrófagos alveolares) e células endoteliais (dos capilares)."
+            },
+            {
+                "pergunta": "Qual a estrutura que funciona como passagem para o saco alveolar?",
+                "resposta": "O ducto alveolar."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio11",
+        "titulo": "Lâmina 55 - Traqueia (Mucosa e Epitélio)",
+        "imagem": "imagem_r11.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual é a camada mais interna e qual é o seu epitélio (epitélio respiratório)?",
+                "resposta": "Camada mucosa. É revestida por epitélio pseudoestratificado colunar ciliado com células caliciformes."
+            },
+            {
+                "pergunta": "Quais são os 5 tipos celulares presentes no epitélio respiratório da traqueia?",
+                "resposta": "Células basais, células em escova, células caliciformes, células colunares ciliadas e células granulares (Sistema Neuroendócrino Difuso)."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio12",
+        "titulo": "Lâmina 55 - Traqueia (Submucosa e Cartilagem)",
+        "imagem": "imagem_r12.png",
+        "perguntas": [
+            {
+                "pergunta": "O que é encontrado caracteristicamente na camada submucosa da traqueia?",
+                "resposta": "Glândulas traqueais e anéis cartilaginosos."
+            },
+            {
+                "pergunta": "Qual a principal característica da cartilagem encontrada na traqueia?",
+                "resposta": "São cerca de 16 a 20 anéis de cartilagem hialina em formato de 'C', com o pericôndrio em contato com a submucosa e a serosa/adventícia."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio13",
+        "titulo": "Lâmina 55 - Traqueia (Serosa)",
+        "imagem": "imagem_r13.png",
+        "perguntas": [
+            {
+                "pergunta": "Qual é a camada mais externa visualizada e com o que ela faz contato?",
+                "resposta": "Camada serosa/adventícia. Faz contato direto com as estruturas de revestimento das cartilagens."
+            }
+        ]
+    },
+    {
+        "id": "respiratorio14",
+        "titulo": "Lâmina D - Embrio (Pulmão Primitivo)",
+        "imagem": "imagem_r14.png",
+        "perguntas": [
+            {
+                "pergunta": "O que está sendo visualizado nesta lâmina embrionária?",
+                "resposta": "Pulmões primitivos na fase pseudoglandular de maturação (5ª a 16ª semana de gestação)."
+            },
+            {
+                "pergunta": "Qual estrutura já é observável nesta fase do desenvolvimento pulmonar?",
+                "resposta": "Já é observável a formação de brônquios."
+            },
+            {
+                "pergunta": "O que representam os ligamentos mesentéricos observados ao redor?",
+                "resposta": "Representam as futuras pleuras."
+            }
+        ]
     }
 ];
 
